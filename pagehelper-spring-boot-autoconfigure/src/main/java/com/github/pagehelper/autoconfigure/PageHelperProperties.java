@@ -36,115 +36,132 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties(prefix = PageHelperProperties.PAGEHELPER_PREFIX)
 public class PageHelperProperties {
 
-    public static final String PAGEHELPER_PREFIX = "pagehelper";
+  public static final String PAGEHELPER_PREFIX = "pagehelper";
 
-    private Properties properties = new Properties();
+  private Properties properties = new Properties();
 
-    public Properties getProperties() {
-        return properties;
-    }
+  public Properties getProperties() {
+    return properties;
+  }
 
-	public Boolean getOffsetAsPageNum() {
-		return Boolean.valueOf(properties.getProperty("offsetAsPageNum"));
-    }
+  public Boolean getCustomInterceptorAble() {
+    // 配置自定义拦截器，则不使用默认的拦截器
+    return Boolean.valueOf(properties.getProperty("customInterceptorAble"));
+  }
 
-	public void setOffsetAsPageNum(Boolean offsetAsPageNum) {
-		properties.setProperty("offsetAsPageNum", offsetAsPageNum.toString());
-    }
+  public void setCustomInterceptorAble(Boolean customInterceptorAble) {
+    properties.setProperty("customInterceptorAble", customInterceptorAble.toString());
+  }
 
-	public Boolean getRowBoundsWithCount() {
-		return Boolean.valueOf(properties.getProperty("rowBoundsWithCount"));
-    }
+  public String getCustomInterceptorFullClassName() {
+    return properties.getProperty("customInterceptorFullClassName");
+  }
 
-	public void setRowBoundsWithCount(Boolean rowBoundsWithCount) {
-		properties.setProperty("rowBoundsWithCount", rowBoundsWithCount.toString());
-    }
+  public void setCustomInterceptorFullClassName(String customInterceptorFullClassName) {
+    properties.setProperty("customInterceptorFullClassName", customInterceptorFullClassName);
+  }
 
-	public Boolean getPageSizeZero() {
-		return Boolean.valueOf(properties.getProperty("pageSizeZero"));
-    }
+  public Boolean getOffsetAsPageNum() {
+    return Boolean.valueOf(properties.getProperty("offsetAsPageNum"));
+  }
 
-	public void setPageSizeZero(Boolean pageSizeZero) {
-		properties.setProperty("pageSizeZero", pageSizeZero.toString());
-    }
+  public void setOffsetAsPageNum(Boolean offsetAsPageNum) {
+    properties.setProperty("offsetAsPageNum", offsetAsPageNum.toString());
+  }
 
-	public Boolean getReasonable() {
-		return Boolean.valueOf(properties.getProperty("reasonable"));
-    }
+  public Boolean getRowBoundsWithCount() {
+    return Boolean.valueOf(properties.getProperty("rowBoundsWithCount"));
+  }
 
-	public void setReasonable(Boolean reasonable) {
-		properties.setProperty("reasonable", reasonable.toString());
-    }
+  public void setRowBoundsWithCount(Boolean rowBoundsWithCount) {
+    properties.setProperty("rowBoundsWithCount", rowBoundsWithCount.toString());
+  }
 
-	public Boolean getSupportMethodsArguments() {
-		return Boolean.valueOf(properties.getProperty("supportMethodsArguments"));
-    }
+  public Boolean getPageSizeZero() {
+    return Boolean.valueOf(properties.getProperty("pageSizeZero"));
+  }
 
-	public void setSupportMethodsArguments(Boolean supportMethodsArguments) {
-		properties.setProperty("supportMethodsArguments", supportMethodsArguments.toString());
-    }
+  public void setPageSizeZero(Boolean pageSizeZero) {
+    properties.setProperty("pageSizeZero", pageSizeZero.toString());
+  }
 
-    public String getDialect() {
-        return properties.getProperty("dialect");
-    }
+  public Boolean getReasonable() {
+    return Boolean.valueOf(properties.getProperty("reasonable"));
+  }
 
-    public void setDialect(String dialect) {
-        properties.setProperty("dialect", dialect);
-    }
+  public void setReasonable(Boolean reasonable) {
+    properties.setProperty("reasonable", reasonable.toString());
+  }
 
-    public String getHelperDialect() {
-        return properties.getProperty("helperDialect");
-    }
+  public Boolean getSupportMethodsArguments() {
+    return Boolean.valueOf(properties.getProperty("supportMethodsArguments"));
+  }
 
-    public void setHelperDialect(String helperDialect) {
-        properties.setProperty("helperDialect", helperDialect);
-    }
+  public void setSupportMethodsArguments(Boolean supportMethodsArguments) {
+    properties.setProperty("supportMethodsArguments", supportMethodsArguments.toString());
+  }
 
-	public Boolean getAutoRuntimeDialect() {
-		return Boolean.valueOf(properties.getProperty("autoRuntimeDialect"));
-    }
+  public String getDialect() {
+    return properties.getProperty("dialect");
+  }
 
-	public void setAutoRuntimeDialect(Boolean autoRuntimeDialect) {
-		properties.setProperty("autoRuntimeDialect", autoRuntimeDialect.toString());
-    }
+  public void setDialect(String dialect) {
+    properties.setProperty("dialect", dialect);
+  }
 
-	public Boolean getAutoDialect() {
-		return Boolean.valueOf(properties.getProperty("autoDialect"));
-    }
+  public String getHelperDialect() {
+    return properties.getProperty("helperDialect");
+  }
 
-	public void setAutoDialect(Boolean autoDialect) {
-		properties.setProperty("autoDialect", autoDialect.toString());
-    }
+  public void setHelperDialect(String helperDialect) {
+    properties.setProperty("helperDialect", helperDialect);
+  }
 
-	public Boolean getCloseConn() {
-		return Boolean.valueOf(properties.getProperty("closeConn"));
-    }
+  public Boolean getAutoRuntimeDialect() {
+    return Boolean.valueOf(properties.getProperty("autoRuntimeDialect"));
+  }
 
-	public void setCloseConn(Boolean closeConn) {
-		properties.setProperty("closeConn", closeConn.toString());
-    }
+  public void setAutoRuntimeDialect(Boolean autoRuntimeDialect) {
+    properties.setProperty("autoRuntimeDialect", autoRuntimeDialect.toString());
+  }
 
-    public String getParams() {
-        return properties.getProperty("params");
-    }
+  public Boolean getAutoDialect() {
+    return Boolean.valueOf(properties.getProperty("autoDialect"));
+  }
 
-    public void setParams(String params) {
-        properties.setProperty("params", params);
-    }
+  public void setAutoDialect(Boolean autoDialect) {
+    properties.setProperty("autoDialect", autoDialect.toString());
+  }
 
-	public Boolean getDefaultCount() {
-		return Boolean.valueOf(properties.getProperty("defaultCount"));
-    }
+  public Boolean getCloseConn() {
+    return Boolean.valueOf(properties.getProperty("closeConn"));
+  }
 
-	public void setDefaultCount(Boolean defaultCount) {
-		properties.setProperty("defaultCount", defaultCount.toString());
-    }
+  public void setCloseConn(Boolean closeConn) {
+    properties.setProperty("closeConn", closeConn.toString());
+  }
 
-    public String getDialectAlias() {
-        return properties.getProperty("dialectAlias");
-    }
+  public String getParams() {
+    return properties.getProperty("params");
+  }
 
-    public void setDialectAlias(String dialectAlias) {
-        properties.setProperty("dialectAlias", dialectAlias);
-    }
+  public void setParams(String params) {
+    properties.setProperty("params", params);
+  }
+
+  public Boolean getDefaultCount() {
+    return Boolean.valueOf(properties.getProperty("defaultCount"));
+  }
+
+  public void setDefaultCount(Boolean defaultCount) {
+    properties.setProperty("defaultCount", defaultCount.toString());
+  }
+
+  public String getDialectAlias() {
+    return properties.getProperty("dialectAlias");
+  }
+
+  public void setDialectAlias(String dialectAlias) {
+    properties.setProperty("dialectAlias", dialectAlias);
+  }
 }
